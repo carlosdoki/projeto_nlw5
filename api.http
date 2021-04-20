@@ -1,0 +1,8 @@
+###
+POST http://localhost:3333/settings
+content-type: application/json
+
+{
+    "chat" : true,
+    "username" : "admin1"
+}
