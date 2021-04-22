@@ -25,6 +25,17 @@ class UsersService {
 
     return user;
   }
+
+  async findByEmail(email: string) {
+    const userAlreadyExists = await this.usersRepository.findOne({
+      email,
+    });
+
+    if (!userAlreadyExists) {
+      throw new Error("User not exists");
+    }
+    return userAlreadyExists;
+  }
 }
 
 export { UsersService };

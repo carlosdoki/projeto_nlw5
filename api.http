@@ -9,6 +9,14 @@ content-type: application/json
     "username" : "admin1"
 }
 
+### Atualizacao de Configuracao
+PUT http://{{host}}/settings/admin
+content-type: application/json
+
+{
+    "chat" : true
+}
+
 ### Criacao de Usuario
 POST http://{{host}}/users
 content-type: application/json
