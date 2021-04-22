@@ -17,12 +17,16 @@ content-type: application/json
     "email" : "carlosdoki@gmail.com"
 }
 
+
+@user_id=dcca8753-0866-4dbb-ad83-41283e623f7e
+@admin_id=b9128670-a36b-11eb-bcbc-0242ac130002
+
 ### Inicio de CHAT
 POST http://{{host}}/messages
 content-type: application/json
 
 {
-    "user_id" : "dcca8753-0866-4dbb-ad83-41283e623f7e",
+    "user_id" : "{{user_id}}",
     "text" : "Olá eu preciso de ajuda"
 }
 
@@ -31,10 +35,10 @@ POST http://{{host}}/messages
 content-type: application/json
 
 {
-    "user_id" : "dcca8753-0866-4dbb-ad83-41283e623f7e",
+    "user_id" : "{{user_id}}",
     "text" : "Olá tudo bem? O que está ocorrendo?",
-    "admin_id": "b9128670-a36b-11eb-bcbc-0242ac130002"
+    "admin_id": "{{admin_id}}"
 }
 
 ### Lista de Mensagem por Usuario
-GET http://{{host}}/messages/dcca8753-0866-4dbb-ad83-41283e623f7e
+GET http://{{host}}/messages/{{user_id}}
