@@ -1,8 +1,40 @@
-###
-POST http://localhost:3333/settings
+@host=localhost:3333
+
+### Criacao de Configuracao
+POST http://{{host}}/settings
 content-type: application/json
 
 {
     "chat" : true,
     "username" : "admin1"
 }
+
+### Criacao de Usuario
+POST http://{{host}}/users
+content-type: application/json
+
+{
+    "email" : "carlosdoki@gmail.com"
+}
+
+### Inicio de CHAT
+POST http://{{host}}/messages
+content-type: application/json
+
+{
+    "user_id" : "dcca8753-0866-4dbb-ad83-41283e623f7e",
+    "text" : "Olá eu preciso de ajuda"
+}
+
+### Resposta do Atendente
+POST http://{{host}}/messages
+content-type: application/json
+
+{
+    "user_id" : "dcca8753-0866-4dbb-ad83-41283e623f7e",
+    "text" : "Olá tudo bem? O que está ocorrendo?",
+    "admin_id": "b9128670-a36b-11eb-bcbc-0242ac130002"
+}
+
+### Lista de Mensagem por Usuario
+GET http://{{host}}/messages/dcca8753-0866-4dbb-ad83-41283e623f7e
